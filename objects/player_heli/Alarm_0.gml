@@ -1,0 +1,1 @@
+heli_bullet_cooldown = true;
