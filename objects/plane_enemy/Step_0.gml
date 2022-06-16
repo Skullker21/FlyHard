@@ -1,6 +1,4 @@
 
-
-
 if distance_to_object(Plane_Player) > 75
 	{var desired_dir = point_direction(x, y, Plane_Player.x, Plane_Player.y);
 }

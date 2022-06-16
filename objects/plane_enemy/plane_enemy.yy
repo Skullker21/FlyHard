@@ -3,7 +3,7 @@
     "name": "spr_enemy_plane1",
     "path": "sprites/spr_enemy_plane1/spr_enemy_plane1.yy",
   },
-  "solid": false,
+  "solid": true,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,

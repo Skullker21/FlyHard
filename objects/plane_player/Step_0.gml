@@ -18,18 +18,12 @@ else
 	var image_turn = clamp(image_turn,0.1,3);
 }
 	
-
-
-
+	
+	
 
 direction -= min(abs(difference), player_turn) * sign(difference);
 image_angle -= min(abs(image_difference), image_turn) * sign(image_difference);
 clamp(image_angle,direction,direction +- 5)
-
-
-
-
-
 
 
 
@@ -149,3 +143,41 @@ if speed <= 1.5
 }
 
 // Enemy Lead
+
+
+//Create EXHAUST Particles
+
+exhaust_emitter = part_emitter_create(global._part_system);
+
+_fps = game_get_speed(gamespeed_fps);
+
+e_offsetX = x + lengthdir_x(-10, image_angle);
+e_offsetY = y + lengthdir_y(-10, image_angle);
+
+
+part_type_direction(global.exhaust0, image_angle-180, image_angle-180, 0, 0);
+part_type_gravity(global.exhaust0, 0.20, image_angle-180);
+
+part_type_direction(global.exhaust1, image_angle-180, image_angle-180, 0, 0);
+part_type_gravity(global.exhaust1, 0.20, image_angle-180);
+
+part_emitter_region(global._part_system, exhaust_emitter, e_offsetX, e_offsetX, e_offsetY, e_offsetY, ps_shape_ellipse, ps_distr_gaussian);
+
+//Create a burst on the alarm[6] timer with an amount of 2
+if(emit && boost==1){
+
+part_emitter_burst(global._part_system, exhaust_emitter, global.exhaust0, 6);
+part_type_scale(global.exhaust0, .5, .5);
+emit = false;
+alarm[6] = 1
+	
+}
+else if(emit){
+
+part_type_scale(global.exhaust0, .3, .3);
+
+part_emitter_burst(global._part_system, exhaust_emitter, global.exhaust0, 3);
+emit = false;
+alarm[6] = 1
+
+}

@@ -21,3 +21,8 @@ right_gatling_cooldown = true;
 
 // Right Weapon Cooldown 
 right_missile_cooldown = true;
+
+
+
+// Emit Particles
+emit = true;
