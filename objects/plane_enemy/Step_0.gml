@@ -73,7 +73,7 @@ if(emit){
 
 //part_type_scale(global.exhaust0, .3, .3);
 
-part_emitter_burst(global._part_system, enemy_exhaust_emitter, global.exhaust2, 3);
+part_emitter_burst(global._part_system, enemy_exhaust_emitter, global.exhaust2, 4);
 emit = false;
 alarm[3] = 1
 
