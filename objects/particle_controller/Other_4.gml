@@ -21,7 +21,7 @@ part_type_speed(global.exhaust1, 0, 0, 0, 0);
 part_type_orientation(global.exhaust1, 0, 0, 0, 0, 0);
 part_type_size(global.exhaust1, 1, 1, 0, 0);
 part_type_scale(global.exhaust1, .5, .5);
-part_type_life(global.exhaust1, 40, 60);
+part_type_life(global.exhaust1, 30, 40);
 part_type_blend(global.exhaust1, false);
 part_type_color3(global.exhaust1, 16777215, 8421504, 16777215);
 part_type_alpha3(global.exhaust1, 0, 0.02, 0);
@@ -55,4 +55,4 @@ part_type_color3(global.exhaust3, 16777215, 8421504, 16777215);
 part_type_alpha3(global.exhaust3, 0, 0.02, 0);
 part_type_shape(global.exhaust3, pt_shape_smoke);
 
-//part_type_step(global.exhaust2, ceil(1), global.exhaust3);
+part_type_step(global.exhaust2, ceil(1), global.exhaust3);
