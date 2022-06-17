@@ -49,7 +49,7 @@ part_type_speed(global.exhaust3, 0, 0, 0, 0);
 part_type_orientation(global.exhaust3, 0, 0, 0, 0, 0);
 part_type_size(global.exhaust3, 1, 1, 0, 0);
 part_type_scale(global.exhaust3, .3, .3);
-part_type_life(global.exhaust3, 20, 30);
+part_type_life(global.exhaust3, 20, 28);
 part_type_blend(global.exhaust3, false);
 part_type_color3(global.exhaust3, 16777215, 8421504, 16777215);
 part_type_alpha3(global.exhaust3, 0, 0.02, 0);
