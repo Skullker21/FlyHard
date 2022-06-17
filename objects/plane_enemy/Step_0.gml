@@ -54,7 +54,6 @@ if instance_health <= 0 {
 
 enemy_exhaust_emitter = part_emitter_create(global._part_system);
 
-_fps = game_get_speed(gamespeed_fps);
 
 e_offsetX = x + lengthdir_x(-10, image_angle);
 e_offsetY = y + lengthdir_y(-10, image_angle);
