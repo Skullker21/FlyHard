@@ -166,7 +166,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/geon_fx/editor/Geon_FX_Editor_Win","resourceVersion":"1.0","name":"splash.png","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2022.5.1.16",
+    "IDEVersion": "2022.5.1.14",
   },
   "resourceVersion": "1.5",
   "name": "Fly Hard mouse controls",
