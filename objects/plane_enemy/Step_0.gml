@@ -26,7 +26,10 @@ image_angle = direction;
 // collisions
 var _inst = instance_place(x, y, plane_enemy);
     if (_inst != noone) {
-        // motion_add(random_range(0,359),0.24)
+        var _diff_x = x - _inst.x;
+        var _diff_y = y - _inst.y;
+        speed = speed + (_diff_x / 128);
+        direction = direction + (_diff_y / 128);
     }
 	
 // Enemy Guns
@@ -69,7 +72,7 @@ if(emit){
 
 //part_type_scale(global.exhaust0, .3, .3);
 
-part_emitter_burst(global._part_system, enemy_exhaust_emitter, global.exhaust2, 0);
+part_emitter_burst(global._part_system, enemy_exhaust_emitter, global.exhaust2, 4);
 emit = false;
 alarm[3] = 1
 
