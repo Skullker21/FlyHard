@@ -1,9 +1,9 @@
 selected = false;
-speed = 10;
+motion_add(image_angle,5);
 bounce = true;
 enemy_bullet_cooldown = true;
 instance_health = 100;
-desired_dir = point_direction(x, y, Plane_Player.x, Plane_Player.y);
+friction = 0.05;
 
 // Emit Particles
 emit = true;

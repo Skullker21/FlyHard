@@ -29,8 +29,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "bullets",
+    "path": "folders/Objects/bullets.yy",
   },
   "resourceVersion": "1.0",
   "name": "bullet_default",

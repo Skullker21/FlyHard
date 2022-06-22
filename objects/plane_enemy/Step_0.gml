@@ -1,37 +1,46 @@
 
-if distance_to_object(Plane_Player) > 75
-	{var desired_dir = point_direction(x, y, Plane_Player.x, Plane_Player.y);
+turn_range = random_range(2,2.4)
+if distance_to_object(player_falcon) >= 75 
+{
+var desired_dir = point_direction(x, y, player_falcon.x, player_falcon.y);
+var image_desired_dir = point_direction(x, y, player_falcon.x, player_falcon.y);
 }
 else
-	{var desired_dir = point_direction(x,y, global.FX, global.FY);
-	
+{
+var desired_dir = point_direction(x, y, global.FX,global.FY);
+var image_desired_dir = point_direction(x, y, global.FX,global.FY);
 }
-
-
-
 
 var difference = angle_difference(direction, desired_dir);
-direction -= min(abs(difference), 2) * sign(difference);
+var player_turn = (abs(difference) * 0.9);
+var player_turn = clamp(player_turn,0.1,turn_range);
+
+var image_difference = angle_difference(image_angle, image_desired_dir);
+
+var image_turn = (abs(image_difference) * 0.9);
+var image_turn = clamp(image_turn,0.1,turn_range);
+
+direction -= min(abs(difference), player_turn) * sign(difference);
+image_angle -= min(abs(image_difference), image_turn) * sign(image_difference);
+clamp(image_angle,direction,direction +- 5);
 
 
-if bounce
+if speed < 10
 {
-	{speed = 12}
-	bounce = false;
-	alarm[0] = 30
+motion_add(image_angle,0.2);
 }
+clamp (speed,0,10);
 
-image_angle = direction;
 
 // collisions
 var _inst = instance_place(x, y, plane_enemy);
     if (_inst != noone) {
-        // motion_add(random_range(0,359),0.24)
+        motion_add(random_range(0,359),0.2)
     }
 	
 // Enemy Guns
 		
-if abs(difference) <= 2 && enemy_bullet_cooldown && distance_to_object(Plane_Player) <= 750
+if abs(difference) <= 2 && enemy_bullet_cooldown && distance_to_object(player_falcon) <= 750
 	{
 	var bullet_inst = instance_create_layer (x, y,"enemy_bullets", bullet_enemy);
 	bullet_inst.direction = direction;
@@ -51,6 +60,8 @@ if instance_health <= 0 {
 
 enemy_exhaust_emitter = part_emitter_create(global._part_system);
 
+_fps = game_get_speed(gamespeed_fps);
+
 e_offsetX = x + lengthdir_x(-10, image_angle);
 e_offsetY = y + lengthdir_y(-10, image_angle);
 
@@ -68,8 +79,17 @@ if(emit){
 
 //part_type_scale(global.exhaust0, .3, .3);
 
-part_emitter_burst(global._part_system, enemy_exhaust_emitter, global.exhaust2, 0);
+part_emitter_burst(global._part_system, enemy_exhaust_emitter, global.exhaust2, 4);
 emit = false;
 alarm[3] = 1
 
+}
+
+
+
+
+if distance_to_object(player_falcon) <= 50
+{
+	desired_dir = point_direction(x,y,global.FX,global.FY);
+	image_desired_dir = point_direction(x, y, global.FX,global.FY);
 }

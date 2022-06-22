@@ -1,5 +1,5 @@
-direction = Plane_Player.image_angle
-image_angle = Plane_Player.image_angle;
+direction = player_falcon.image_angle
+image_angle = player_falcon.image_angle;
 
 
-speed = Plane_Player.speed;
+speed = player_falcon.speed;

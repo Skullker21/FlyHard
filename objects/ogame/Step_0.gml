@@ -24,7 +24,3 @@ layer_x("parallax_background_3", cameraX * -3);
 layer_y("parallax_background_3", cameraY * -3);
 
 
-
-
-
-

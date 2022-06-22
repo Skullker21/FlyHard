@@ -1,9 +1,10 @@
+
 /// @description Camera
 #macro CameraWidth 1920
 #macro CameraHeight 1080
 #macro CameraScale 1
 #macro CameraSpeed 0.2
-cameraTarget = Plane_Player;
+cameraTarget = player_falcon;
 //global.Camera = camera_create();
 global.Camera = camera_create_view(0, 0, CameraWidth, CameraHeight);
 //global.Camera = camera_create_view(0, 0, CameraWidth, CameraHeight, 0, objPlayer, 4, 4, CameraWidth, CameraHeight);
@@ -23,8 +24,4 @@ var windowWidth = CameraWidth * CameraScale;
 var windowHeight = CameraHeight * CameraScale;
 window_set_position(display_get_width() / 2 - windowWidth / 2, display_get_height() / 2 - windowHeight / 2);
 
-
-// Projectile Weapon Variables
-globalvar gatling_right
-globalvar gatling_left
 
