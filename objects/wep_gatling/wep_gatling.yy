@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_gatling",
+    "path": "sprites/spr_gatling/spr_gatling.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,

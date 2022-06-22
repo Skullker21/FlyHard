@@ -23,4 +23,8 @@ layer_y("parallax_background_1", cameraY * 0.9);
 layer_x("parallax_background_3", cameraX * -3);
 layer_y("parallax_background_3", cameraY * -3);
 
+layer_x("parallax_background_4", (cameraX - 3000) * 0.84);
+layer_y("parallax_background_4", (cameraY - 250) * 0.84);
 
+layer_x("parallax_background_5", cameraX * 0.7);
+layer_y("parallax_background_5", cameraY * 0.7);
