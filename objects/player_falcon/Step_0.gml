@@ -108,6 +108,12 @@ if boost == 1 {
 // Camera settings
 
 
+// Weapon Slots
+
+global.falcon_wep_1_x = x + lengthdir_x(10, image_angle + 90)
+global.falcon_wep_1_y = y + lengthdir_y(10, image_angle + 90)
+
+
 
 // Weapon Parameters
 
