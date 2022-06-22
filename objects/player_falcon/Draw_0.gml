@@ -1,28 +1,28 @@
 draw_self();
 
-if difference >= -5 && difference <= 5
+if difference < 10
 {
-	image_index = 1
+	image_index = 0
 }
 
-if difference >= -20 && difference < 5
-{
-	image_index = 2
-}
-
-if difference >= -180 && difference < -20
+if difference >= 10 && difference < 30
 {
 	image_index = 3
 }
 
-if difference > 5 && difference <=20
+if difference >= 30 && difference < 180
 {
 	image_index = 4
 }
 
-if difference > 20 && difference < 180
+if difference > -30 && difference < -10
 {
-	image_index = 5
+	image_index = 1
+}
+
+if difference <= -30 && difference > -180
+{
+	image_index = 2
 }
 
 
