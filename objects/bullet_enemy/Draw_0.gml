@@ -1,9 +1,9 @@
 {
-    length = 5;
+    length = 8;
  
     if (length > 0) {
         step = 3;
-        dir = degtorad(direction);
+        dir = degtorad(image_angle);
         px = cos(dir);
         py = -sin(dir);
  

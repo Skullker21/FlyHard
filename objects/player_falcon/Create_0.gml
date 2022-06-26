@@ -22,6 +22,6 @@ right_missile_cooldown = true;
 emit = true;
 
 // Create Weapon Slots
-// global.falcon_wep_1_x = x + lengthdir_x(10, image_angle + 90)
-// global.falcon_wep_1_y = y + lengthdir_y(10, image_angle + 90)
-// instance_create_layer(global.falcon_wep_1_x,global.falcon_wep_1_y,"weapons",wep_gatling);
+global.falcon_wep_1_x = x + lengthdir_x(10, image_angle + 90)
+global.falcon_wep_1_y = y + lengthdir_y(10, image_angle + 90)
+instance_create_layer(global.falcon_wep_1_x,global.falcon_wep_1_y,"weapons",wep_gatling);

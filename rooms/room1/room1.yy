@@ -19,7 +19,6 @@
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"player_falcon","path":"objects/player_falcon/player_falcon.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":960.0,"y":416.0,"resourceVersion":"1.0","name":"inst_player","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oGame","path":"objects/oGame/oGame.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":672.0,"y":224.0,"resourceVersion":"1.0","name":"inst_4908A144","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[],"isDnd":false,"objectId":{"name":"plane_enemy","path":"objects/plane_enemy/plane_enemy.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":544.0,"y":608.0,"resourceVersion":"1.0","name":"inst_542A3B7D","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":-1800,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[],"visible":true,"depth":-1700,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],"resourceVersion":"1.0","name":"weapons","tags":[],"resourceType":"GMRInstanceLayer",},
       ],"visible":true,"depth":-1800,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
@@ -41,7 +40,6 @@
     {"name":"inst_player","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_4908A144","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_759AF67F","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_542A3B7D","path":"rooms/Room1/Room1.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
