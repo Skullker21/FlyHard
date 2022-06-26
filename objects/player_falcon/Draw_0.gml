@@ -30,7 +30,7 @@ if difference <= -30 && difference > -180
 draw_healthbar(x-20,y+25,x+20,y+30, health, c_black, c_red, c_lime, 0, true, true)
 
 //shield bar
-draw_healthbar(x-20,y+25,x+20,y+20, shield * 2, c_black, c_purple, c_aqua, 0, true, true)
+draw_healthbar(x-20,y+25,x+20,y+20, shield * 2, c_black, c_aqua, c_aqua, 0, true, true)
 
 // death
 if health <= 0

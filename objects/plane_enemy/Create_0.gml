@@ -1,4 +1,3 @@
-selected = false;
 motion_add(image_angle,5);
 bounce = true;
 enemy_bullet_cooldown = true;

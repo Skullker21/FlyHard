@@ -40,11 +40,22 @@ clamp(image_angle,direction,direction +- 5)
 
 
 
-// Follow Point
+// Follow Points
 
 global.FX = x + lengthdir_x(-500, image_angle);
 global.FY = y + lengthdir_y(-500, image_angle);
 
+global.FX2 = x + lengthdir_x(-500, image_angle + 90);
+global.FY2 = y + lengthdir_y(-500, image_angle + 90);
+
+global.FX3 = x + lengthdir_x(500, image_angle + 90);
+global.FY3 = y + lengthdir_y(500, image_angle + 90);
+
+global.FX4 = x + lengthdir_x(500, image_angle + 90);
+global.FY4 = y + lengthdir_y(500, image_angle + 90);
+
+global.FX4 = x + lengthdir_x(500, image_angle + 90);
+global.FY4 = y + lengthdir_y(500, image_angle + 90);
 
 // Thrust Controls
 // w = 87, s = 83, shift = 16

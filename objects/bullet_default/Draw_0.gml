@@ -1,5 +1,5 @@
 {
-    length = speed - player_falcon.speed;
+    length = (speed * 0.8) - player_falcon.speed;
  
     if (length > 0) {
         step = 3;

@@ -1,9 +1,30 @@
+// Generate Lead Point
 
-turn_range = random_range(2,2.4)
-if distance_to_object(player_falcon) >= 75 
+_x = player_falcon.x - x;
+_y = player_falcon.y - y;
+_s = player_falcon.speed;
+_b = 24;
+_d = point_distance(x,y,player_falcon.x,player_falcon.y);
+
+lead_angle = sin(_y - sin(player_falcon.direction) * _d/sqrt((abs((_b/_s)^2) + 1))) / (_d * sqrt(abs(1 - (1/((_b/_s)^2 + 1))))) ;
+lead_distance = sqrt(abs(_x^2 + _y^2)) ;
+
+_LX = player_falcon.x + lengthdir_x((1.5 * player_falcon.speed) * (0.5 * sqrt(point_distance(x,y,player_falcon.x,player_falcon.y))), player_falcon.image_angle);
+_LY = player_falcon.y + lengthdir_y(player_falcon.speed * sqrt(point_distance(x,y,player_falcon.x,player_falcon.y)), player_falcon.image_angle);
+
+
+
+
+
+
+// Plane Handling
+
+turn_range = random_range(2,3)
+
+if distance_to_object(player_falcon) >= 50
 {
-var desired_dir = point_direction(x, y, player_falcon.x, player_falcon.y);
-var image_desired_dir = point_direction(x, y, player_falcon.x, player_falcon.y);
+var desired_dir = point_direction(x, y, _LX,_LY);
+var image_desired_dir = point_direction(x, y, _LX,_LY);
 }
 else
 {
@@ -12,18 +33,19 @@ var image_desired_dir = point_direction(x, y, global.FX,global.FY);
 }
 
 var difference = angle_difference(direction, desired_dir);
-var player_turn = (abs(difference) * 0.9);
+var player_turn = (abs(difference) * 0.98);
 var player_turn = clamp(player_turn,0.1,turn_range);
 
 var image_difference = angle_difference(image_angle, image_desired_dir);
 
-var image_turn = (abs(image_difference) * 0.9);
+var image_turn = (abs(image_difference) * 0.98);
 var image_turn = clamp(image_turn,0.1,turn_range);
 
 direction -= min(abs(difference), player_turn) * sign(difference);
 image_angle -= min(abs(image_difference), image_turn) * sign(image_difference);
 clamp(image_angle,direction,direction +- 5);
 
+// Thrust Speed
 
 if speed < 10
 {
@@ -40,7 +62,7 @@ var _inst = instance_place(x, y, plane_enemy);
 	
 // Enemy Guns
 		
-if abs(difference) <= 2 && enemy_bullet_cooldown && distance_to_object(player_falcon) <= 750
+if abs(difference) <= 5 && enemy_bullet_cooldown && distance_to_object(player_falcon) <= 750 
 	{
 	var bullet_inst = instance_create_layer (x, y,"enemy_bullets", bullet_enemy);
 	bullet_inst.direction = direction;
@@ -85,11 +107,3 @@ alarm[3] = 1
 
 }
 
-
-
-
-if distance_to_object(player_falcon) <= 50
-{
-	desired_dir = point_direction(x,y,global.FX,global.FY);
-	image_desired_dir = point_direction(x, y, global.FX,global.FY);
-}
