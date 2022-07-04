@@ -1,3 +1,17 @@
+// Thrust Controls
+// w = 87, s = 83, shift = 16
+var thrust_up = keyboard_check(87);
+var thrust_down = keyboard_check(83);
+var boost = keyboard_check(16);
+
+// Weapon Controls
+// space = 32, ctrl = 162
+var shoot_default = keyboard_check(32);
+var shoot_right = mouse_check_button(mb_right);
+var shoot_left = mouse_check_button(mb_left);
+
+// Control
+
 if global.control = 1 {
 desired_dir = point_direction(x, y, mouse_x, mouse_y);
 }
@@ -11,61 +25,56 @@ else
 {
 	image_desired_dir = direction;
 }
+
 difference = angle_difference(direction, desired_dir);
 player_turn = (abs(difference)) * 0.1;
-player_turn = clamp(player_turn,0.1,3);
+player_turn = clamp(player_turn,0,3);
 
 image_difference = angle_difference(image_angle, image_desired_dir);
 
 image_turn = (abs(image_difference)) * 0.1;
 
+fast = speed/100;
+lift = difference * fast;
+lift = clamp(lift,-90,90);
+//direction -= (min(abs(difference), player_turn) * sign(difference)) * 0.01;
+
 drift = keyboard_check(162);
 if drift == 1 && global.control = 1 {
-	var image_turn = clamp(image_turn,0.1,5);
+	image_turn = clamp(image_turn,0,10);
+	friction = 0.01;
+	image_angle -= (min(abs(image_difference), image_turn) * sign(image_difference)) * 0.8;
+	
 }
 else
 {
-	var image_turn = clamp(image_turn,0.1,3);
+	image_turn = clamp(image_turn,0,5);
+	friction = 0.02;
+	image_angle -= (min(abs(image_difference), image_turn) * sign(image_difference)) * 0.95;
+	motion_add(image_angle + (-1 * lift), (player_turn * fast));
+	motion_add(image_angle,0.5);
 }
 	
 if health <= 0 {
 	global.control = 0;
 }
 
-
-direction -= min(abs(difference), player_turn) * sign(difference);
-image_angle -= min(abs(image_difference), image_turn) * sign(image_difference);
-clamp(image_angle,direction,direction +- 5)
-
-
-
-
 // Follow Point
 
 global.FX = x + lengthdir_x(-500, image_angle);
 global.FY = y + lengthdir_y(-500, image_angle);
 
-
-// Thrust Controls
-// w = 87, s = 83, shift = 16
-var thrust_up = keyboard_check(87);
-var thrust_down = keyboard_check(83);
-var boost = keyboard_check(16);
-
-// Weapon Controls
-// space = 32, ctrl = 162
-var shoot_default = keyboard_check(32);
-var shoot_right = mouse_check_button(mb_right);
-var shoot_left = mouse_check_button(mb_left);
-
-
 // Thrust Speed
-motion_add(image_angle,0.2);
-if (thrust_up == 1 && drift != 1 && global.control=1) { motion_add(image_angle,0.4); }
-if (thrust_down == 1 && global.control=1) && speed > 3 { speed -= 0.24; }
+//motion_add(image_angle,0.2);
+if (thrust_up == 1 && global.control=1) { motion_add(image_angle,0.4); }
+if (thrust_down == 1 && global.control=1) && speed > 3 { speed -= 1; }
 
 // Boost Speed
-if (boost == 1 && global.control=1) { motion_add(image_angle,0.6); }
+if (boost == 1 && global.control=1) 
+{ 
+	motion_add(image_angle + image_difference,0.6); 
+	
+}
 
 // Max Speed
 if (boost == 1 && global.control = 1) speed = clamp(speed, 0, 18)
@@ -121,13 +130,15 @@ if default_cooldown && (shoot_default == 1) && global.control=1
 {
 	{instance_create_layer (x, y,"bullets", bullet_default);}
 	default_cooldown = false;
+	audio_play_sound(snd_gun_default,1,false);
 	alarm[0] = 5
 }
 
 if right_missile_cooldown && (shoot_right == 1) && global.control=1
 {
-	{instance_create_layer (x, y,"bullets", missile);}
+	{instance_create_layer (x, y,"bullets", bullet_missile);}
 	right_missile_cooldown = false;
+	audio_play_sound(snd_gun_missile,1,false);
 	alarm[2] = 60
 }
 
@@ -190,3 +201,8 @@ emit = false;
 alarm[6] = 1
 
 }
+
+
+// Sound
+audio_listener_position(x,y,0);
+audio_listener_orientation(0,0,1000,0,0,-500);

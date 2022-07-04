@@ -1,0 +1,1 @@
+enemy_bullet_cooldown = true;

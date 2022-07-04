@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Heli",
+    "path": "folders/Sprites/Planes (Player)/Heli.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_player_heli",

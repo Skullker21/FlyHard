@@ -1,15 +1,30 @@
 
-turn_range = random_range(2,2.4)
-if distance_to_object(player_falcon) >= 75 
+// Lead Fire
+_LX = player_falcon.x + (_LA * lengthdir_x(player_falcon.speed * sqrt(point_distance(x,y,player_falcon.x,player_falcon.y)), player_falcon.direction));
+_LY = player_falcon.y + (_LA * lengthdir_y(player_falcon.speed * sqrt(point_distance(x,y,player_falcon.x,player_falcon.y)), player_falcon.direction));
+
+
+if distance_to_object(player_falcon) >= 50 && control = 1
 {
-var desired_dir = point_direction(x, y, player_falcon.x, player_falcon.y);
-var image_desired_dir = point_direction(x, y, player_falcon.x, player_falcon.y);
+var desired_dir = point_direction(x, y, _LX, _LY);
+var image_desired_dir = point_direction(x, y, _LX, _LY);
 }
-else
+
+if distance_to_object(player_falcon) < 50 && control = 1
+
 {
 var desired_dir = point_direction(x, y, global.FX,global.FY);
 var image_desired_dir = point_direction(x, y, global.FX,global.FY);
 }
+
+if control = 0
+{
+	desired_dir = direction;
+	image_desired_dir = direction;
+}
+
+// Turn Rate
+turn_range = random_range(1.5,2)
 
 var difference = angle_difference(direction, desired_dir);
 var player_turn = (abs(difference) * 0.9);
@@ -31,7 +46,6 @@ motion_add(image_angle,0.2);
 }
 clamp (speed,0,10);
 
-
 // collisions
 var _inst = instance_place(x, y, plane_enemy);
     if (_inst != noone) {
@@ -40,11 +54,12 @@ var _inst = instance_place(x, y, plane_enemy);
 	
 // Enemy Guns
 		
-if abs(difference) <= 2 && enemy_bullet_cooldown && distance_to_object(player_falcon) <= 750
+if abs(difference) <= 2 && enemy_bullet_cooldown && distance_to_object(player_falcon) <= 750 && control = 1
 	{
 	var bullet_inst = instance_create_layer (x, y,"enemy_bullets", bullet_enemy);
 	bullet_inst.direction = direction;
 	enemy_bullet_cooldown = false;
+	audio_play_sound_at(snd_gun_enemy,x,y,0,100,1000,1,false,1);
 	alarm[1] = 10
 }
 
@@ -52,6 +67,8 @@ if abs(difference) <= 2 && enemy_bullet_cooldown && distance_to_object(player_fa
 // Enemy Health
 
 if instance_health <= 0 {
+	control = 0;
+	instance_create_layer(x,y,"enemy_bullets",explosion_1);
 	instance_destroy();
 }
 
@@ -60,11 +77,8 @@ if instance_health <= 0 {
 
 enemy_exhaust_emitter = part_emitter_create(global._part_system);
 
-_fps = game_get_speed(gamespeed_fps);
-
 e_offsetX = x + lengthdir_x(-10, image_angle);
 e_offsetY = y + lengthdir_y(-10, image_angle);
-
 
 part_type_direction(global.exhaust2, image_angle-180, image_angle-180, 0, 0);
 part_type_gravity(global.exhaust2, 0.20, image_angle-180);
@@ -73,7 +87,6 @@ part_type_direction(global.exhaust3, image_angle-180, image_angle-180, 0, 0);
 part_type_gravity(global.exhaust3, 0.20, image_angle-180);
 
 part_emitter_region(global._part_system, enemy_exhaust_emitter, e_offsetX, e_offsetX, e_offsetY, e_offsetY, ps_shape_ellipse, ps_distr_gaussian);
-
 
 if(emit){
 
@@ -84,8 +97,6 @@ emit = false;
 alarm[3] = 1
 
 }
-
-
 
 
 if distance_to_object(player_falcon) <= 50

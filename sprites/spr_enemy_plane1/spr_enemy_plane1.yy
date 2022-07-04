@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Planes (Enemy)",
+    "path": "folders/Sprites/Planes (Enemy).yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_enemy_plane1",

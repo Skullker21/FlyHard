@@ -1,3 +1,4 @@
+thrust = 50;
 friction = 0.2;
 health = 100;
 shield = 50;

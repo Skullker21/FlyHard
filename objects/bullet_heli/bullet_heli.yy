@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "bullets",
-    "path": "folders/Objects/bullets.yy",
+    "name": "player",
+    "path": "folders/Objects/bullets/player.yy",
   },
   "resourceVersion": "1.0",
   "name": "bullet_heli",

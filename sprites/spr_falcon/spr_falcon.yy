@@ -86,7 +86,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Falcon",
-    "path": "folders/Sprites/Player Planes/Falcon.yy",
+    "path": "folders/Sprites/Planes (Player)/Falcon.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_falcon",

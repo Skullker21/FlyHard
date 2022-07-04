@@ -34,8 +34,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "planes",
+    "path": "folders/Objects/planes.yy",
   },
   "resourceVersion": "1.0",
   "name": "plane_enemy",
