@@ -1,6 +1,7 @@
 // Lead Accuracy, 1=perfect 0=none
-_LA = random_range(0.8,1);
+_LA = random_range(0.2,0.4);
 
+friction = 0.2;
 control = 1;
 selected = false;
 motion_add(image_angle,5);

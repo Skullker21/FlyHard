@@ -117,30 +117,7 @@ if boost == 1 {
 // Camera settings
 
 
-// Weapon Slots
 
-global.falcon_wep_1_x = x + lengthdir_x(10, image_angle + 90)
-global.falcon_wep_1_y = y + lengthdir_y(10, image_angle + 90)
-
-
-
-// Weapon Parameters
-
-if default_cooldown && (shoot_default == 1) && global.control=1
-{
-	{instance_create_layer (x, y,"bullets", bullet_default);}
-	default_cooldown = false;
-	audio_play_sound(snd_gun_default,1,false);
-	alarm[0] = 5
-}
-
-if right_missile_cooldown && (shoot_right == 1) && global.control=1
-{
-	{instance_create_layer (x, y,"bullets", bullet_missile);}
-	right_missile_cooldown = false;
-	audio_play_sound(snd_gun_missile,1,false);
-	alarm[2] = 60
-}
 
 // Left Offset
 
@@ -206,3 +183,48 @@ alarm[6] = 1
 // Sound
 audio_listener_position(x,y,0);
 audio_listener_orientation(0,0,1000,0,0,-500);
+
+
+
+// Weapon Slots
+
+global.falcon_wep_1_x = x + lengthdir_x(10, image_angle + 90)
+global.falcon_wep_1_y = y + lengthdir_y(10, image_angle + 90)
+
+// Weapon Parameters
+
+if default_cooldown && (shoot_default == 1) && global.control=1
+{
+	{instance_create_layer (x, y,"bullets", bullet_default);}
+	default_cooldown = false;
+	//audio_play_sound(snd_gun_default,1,false);
+	default_rof_time = time_source_create(time_source_game, 0.1, time_source_units_seconds, function()
+	{
+		default_cooldown = true;
+	}, [], 1);
+	time_source_start(default_rof_time);
+}
+
+if right_missile_cooldown && (shoot_right == 1) && global.control=1
+{
+	{instance_create_layer (x, y,"bullets", bullet_missile);}
+	right_missile_cooldown = false;
+	//audio_play_sound(snd_gun_missile,1,false);
+	right_missile_rof_time = time_source_create(time_source_game, 1, time_source_units_seconds, function()
+	{
+		right_missile_cooldown = true;
+	}, [], 1);
+	time_source_start(right_missile_rof_time);
+}
+
+if right_gatling_cooldown && (shoot_left = 1) && global.control = 1
+{
+	{instance_create_layer (x, y, "bullets", bullet_gatling);}
+	gatling_cooldown = false;
+	//audio_play_sound(snd_gun_gatling,1,false);
+	right_gatling_rof_time = time_source_create(time_source_game, 0.1, time_source_units_seconds, function()
+	{
+		right_gatling_cooldown = true;
+	}, [], 1);
+	time_source_start(right_gatling_rof_time);
+}

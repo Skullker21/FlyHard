@@ -1,9 +1,10 @@
+
 /// @description Manual Controls
 var cameraX = camera_get_view_x(global.Camera);
 var cameraY = camera_get_view_y(global.Camera);
 
-var targetX = cameraTarget.x - global.CameraWidth / 2;
-var targetY = cameraTarget.y - global.CameraHeight / 2;
+var targetX = (cameraTarget.x - global.CameraWidth / 2);
+var targetY = (cameraTarget.y - global.CameraHeight / 2);
 
 //Clamp
 targetX = clamp(targetX, 0, room_width - global.CameraWidth);

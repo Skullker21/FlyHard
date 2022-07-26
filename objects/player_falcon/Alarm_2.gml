@@ -1,1 +1,0 @@
-right_missile_cooldown = true;

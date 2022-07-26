@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_missile",
-    "path": "sprites/spr_missile/spr_missile.yy",
+    "name": "spr_explosion_missile",
+    "path": "sprites/spr_explosion_missile/spr_explosion_missile.yy",
   },
   "solid": false,
   "visible": true,
@@ -24,17 +24,15 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":6,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"plane_enemy_v2","path":"objects/plane_enemy_v2/plane_enemy_v2.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "player",
-    "path": "folders/Objects/bullets/player.yy",
+    "name": "enemy",
+    "path": "folders/Objects/bullets/enemy.yy",
   },
   "resourceVersion": "1.0",
-  "name": "bullet_missile",
+  "name": "explosion_missile",
   "tags": [],
   "resourceType": "GMObject",
 }

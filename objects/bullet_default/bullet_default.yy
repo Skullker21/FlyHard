@@ -27,6 +27,7 @@
     {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"plane_enemy","path":"objects/plane_enemy/plane_enemy.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"plane_enemy2","path":"objects/plane_enemy2/plane_enemy2.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"plane_enemy_v2","path":"objects/plane_enemy_v2/plane_enemy_v2.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

@@ -1,0 +1,1 @@
+instance_health = instance_health - 65;
