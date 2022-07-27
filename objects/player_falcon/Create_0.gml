@@ -5,6 +5,8 @@ shield = 50;
 image_speed = 0;
 global.control = 1;
 motion_add(image_angle,10);
+drift_charge = 100;
+drift_cooldown = true;
 // Boost Cooldown
 boost_meter = 1;
 boost_decay = 0.01;

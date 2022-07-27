@@ -1,0 +1,1 @@
+drift_cooldown = true;

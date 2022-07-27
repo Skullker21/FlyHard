@@ -6,3 +6,6 @@ speed = player_falcon.speed;
 
 // Emit Particles
 emit = true;
+
+
+alarm[0] = 120;

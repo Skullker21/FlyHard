@@ -105,6 +105,40 @@ if shield < 50 && shield_timer = true
 	shield = shield + 0.2
 }
 
+// Drift Charge Settings
+clamp(drift_charge,0,100);
+
+if drift_charge > 0 && drift = true && global.control = 1
+{
+	drift_charge = drift_charge - ((speed/2000) * abs(angle_difference(direction,image_angle)))
+	drift_cooldown = false
+	alarm[11] = 120;
+}
+
+if drift_charge <= 0 && drift = true && global.control = 1
+{
+	health = health - ((speed/5000) * abs(angle_difference(direction,image_angle)))
+	drift_cooldown = false
+	alarm[11] = 120;
+	
+}
+
+if drift = false && drift_charge < 100 && drift_cooldown
+{
+	drift_charge = drift_charge + 0.4
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Boost Settings
 
@@ -197,7 +231,7 @@ if default_cooldown && (shoot_default == 1) && global.control=1
 {
 	{instance_create_layer (x, y,"bullets", bullet_default);}
 	default_cooldown = false;
-	//audio_play_sound(snd_gun_default,1,false);
+	audio_play_sound(snd_gun_default,1,false);
 	default_rof_time = time_source_create(time_source_game, 0.1, time_source_units_seconds, function()
 	{
 		default_cooldown = true;
@@ -209,7 +243,7 @@ if right_missile_cooldown && (shoot_right == 1) && global.control=1
 {
 	{instance_create_layer (x, y,"bullets", bullet_missile);}
 	right_missile_cooldown = false;
-	//audio_play_sound(snd_gun_missile,1,false);
+	audio_play_sound(snd_gun_missile,1,false);
 	right_missile_rof_time = time_source_create(time_source_game, 1, time_source_units_seconds, function()
 	{
 		right_missile_cooldown = true;
@@ -221,7 +255,7 @@ if right_gatling_cooldown && (shoot_left = 1) && global.control = 1
 {
 	{instance_create_layer (x, y, "bullets", bullet_gatling);}
 	gatling_cooldown = false;
-	//audio_play_sound(snd_gun_gatling,1,false);
+	audio_play_sound(snd_gun_gatling,1,false);
 	right_gatling_rof_time = time_source_create(time_source_game, 0.1, time_source_units_seconds, function()
 	{
 		right_gatling_cooldown = true;

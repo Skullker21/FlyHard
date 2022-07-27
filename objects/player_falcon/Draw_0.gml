@@ -29,8 +29,12 @@ if image_difference <= -30 && image_difference > -180
 // health bar
 draw_healthbar(x-20,y+25,x+20,y+30, health, c_black, c_red, c_lime, 0, true, true)
 
-//shield bar
+// shield bar
 draw_healthbar(x-20,y+25,x+20,y+20, shield * 2, c_black, c_purple, c_aqua, 0, true, true)
+
+// drift bar
+draw_healthbar(x-20,y+30,x+20,y+35, drift_charge, c_black, c_purple, c_aqua, 0, true, true)
+
 
 // death
 if health <= 0

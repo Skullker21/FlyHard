@@ -74,7 +74,7 @@ if abs(image_difference) <= 2 && enemy_bullet_cooldown && distance_to_object(pla
 	var bullet_inst = instance_create_layer (x, y,"enemy_bullets", bullet_enemy);
 	bullet_inst.direction = random_range(image_angle - 15,image_angle + 15);
 	enemy_bullet_cooldown = false;
-	//audio_play_sound_at(snd_gun_enemy,x,y,0,100,1000,1,false,1);
+	audio_play_sound_at(snd_gun_enemy,x,y,0,100,1000,1,false,1);
 	alarm[1] = 10
 }
 
