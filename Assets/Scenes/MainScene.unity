@@ -181,14 +181,14 @@ SpriteRenderer:
   m_SortingLayerID: -1384440833
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5058a38a4d3fec04eb83a549e59007fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f30156cb675ca4846822c39c087c3543, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 87.07095, y: 48.97741}
+  m_Size: {x: 180, y: 180}
   m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
+  m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
@@ -360,23 +360,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3147494044702448130, guid: 530020ec8d42ae34ea5f3118f2ae62c7, type: 3}
       propertyPath: m_LinearDrag
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3147494044702448130, guid: 530020ec8d42ae34ea5f3118f2ae62c7, type: 3}
-      propertyPath: m_AngularDrag
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3147494044702448130, guid: 530020ec8d42ae34ea5f3118f2ae62c7, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3147494044702448132, guid: 530020ec8d42ae34ea5f3118f2ae62c7, type: 3}
       propertyPath: m_Name
       value: player_falcon_full
-      objectReference: {fileID: 0}
-    - target: {fileID: 3147494044702448133, guid: 530020ec8d42ae34ea5f3118f2ae62c7, type: 3}
-      propertyPath: thrust
-      value: 103.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
