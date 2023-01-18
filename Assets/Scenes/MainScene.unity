@@ -358,13 +358,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3147494044702448130, guid: 530020ec8d42ae34ea5f3118f2ae62c7, type: 3}
-      propertyPath: m_LinearDrag
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3147494044702448132, guid: 530020ec8d42ae34ea5f3118f2ae62c7, type: 3}
       propertyPath: m_Name
       value: player_falcon_full
+      objectReference: {fileID: 0}
+    - target: {fileID: 3147494044702448133, guid: 530020ec8d42ae34ea5f3118f2ae62c7, type: 3}
+      propertyPath: turnLiftThreshold
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

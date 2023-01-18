@@ -99,8 +99,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 1
+  m_LinearDrag: 0.5
+  m_AngularDrag: 4
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -119,6 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e9113b620d5bc4c842cb97dbfc6580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 2.5
+  thrust: 6
   hasControl: 1
   turnSpeed: 20
